@@ -1,0 +1,22 @@
+---
+PREFIXES_FILE: "data/v6_full_table_and_default"
+
+NEXT_HOP: "self"
+
+WAITING_TIME: 300 # Time to wait between iterations
+
+INITIAL_WARMUP: 10000 # Number of prefixes to send initially
+INITIAL_WAIT: 10 # Seconds to wait initially
+
+MAX_TOTAL: 250000
+
+# On every iteration we will install randint(MIN_PREFIXES, MAX_PREFIXES) prefixes
+MIN_PREFIXES: 2000
+MAX_PREFIXES: 5000
+
+REMOVE_PREFIXES: 1 # Percentage of prefixes to remove on each iteration
+
+# Some parameters to add random AS PATHs to each advertisement
+NUM_DIFFERENT_AS_PATHS: 100
+MIN_AS_LENGTH: 0
+MAX_AS_LENGTH: 10

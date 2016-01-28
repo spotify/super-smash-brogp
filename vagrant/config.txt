@@ -1,0 +1,24 @@
+interface Ethernet1
+   no switchport
+   ip address 192.168.56.100/24
+   ipv6 address 2001:db8::100/64
+!
+interface Loopback0
+   ip address 192.168.1.1/32
+   ipv6 address 2001:db8:1::1/128
+!
+ip routing
+!
+ipv6 unicast-routing
+!
+router bgp 65000
+   neighbor 192.168.56.1 remote-as 65100
+   neighbor 192.168.56.1 maximum-routes 12000
+   address-family ipv4
+      neighbor 192.168.56.1 activate
+      network 192.168.1.1/32
+   !
+   address-family ipv6
+      neighbor 192.168.56.1 activate
+      network 2001:db8:1::1/128
+!

@@ -1,0 +1,25 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+"""
+You will need the boxes:
+
+ * vEOS-4.15.2F - https://eos.arista.com/using-veos-with-vagrant-and-virtualbox/
+"""
+
+Vagrant.configure(2) do |config|
+
+  config.vm.define "eos" do |eos|
+    eos.vm.box = "vEOS-4.15.2F"
+
+    eos.vm.network :forwarded_port, guest: 443, host: 12443, id: 'https'
+
+    eos.vm.network "private_network", name: 'vboxnet0', ip: "169.254.1.11", auto_config: false
+
+    #eos.vm.provision "host_shell", inline: <<-SHELL
+    #  ./provision.py eos 12443 vagrant vagrant
+    #SHELL
+
+  end
+
+end
