@@ -1,6 +1,6 @@
 # super-smash-brogp
 
-Sends and retrieves BGP prefixes for fun.
+Sends and withdraws BGP prefixes for fun.
 
 ## Purpose
 
@@ -58,7 +58,7 @@ To run the tool in the CLI without using exabgp:
     # ./ssbgp.py -h
     usage: ssbgp.py [-h] peer local_as conf
 
-    Sends and retrieves BGP prefixes for fun.
+    Sends and withdraws BGP prefixes for fun.
 
     positional arguments:
       peer        Peer's IP address.

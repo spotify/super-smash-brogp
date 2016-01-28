@@ -25,7 +25,7 @@ path = os.path.dirname(os.path.realpath(__file__))
 
 
 def build_help():
-    parser = argparse.ArgumentParser(description="Sends and retrieves BGP prefixes for fun.")
+    parser = argparse.ArgumentParser(description="Sends and withdraws BGP prefixes for fun.")
     parser.add_argument(dest='peer', action='store', help="Peer's IP address.")
     parser.add_argument(dest='local_as', action='store', help="Our own AS.")
     parser.add_argument(dest='conf', action='store', help="Path to configuration file.")
