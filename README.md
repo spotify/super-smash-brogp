@@ -45,6 +45,12 @@ Configure exabgp in any way you want. Just make sure you configure the process s
         }
     }
 
+Finally start exabgp:
+
+    exabgp /path/to/my/config/exabgp.conf
+
+It's better if you check exabgp's documentation but at least you should be able to get started with the previous instructions.
+
 ### CLI
 
 To run the tool in the CLI without using exabgp:
@@ -95,8 +101,8 @@ Here you can see the result of running 4 ssbgp processes against a router:
 
 ### ssbgp
 
-You also have to configure ssbgp. You can tweak some parameters like how many prefixes you want to add/remove on each iteration, how fast, from which file you want to read the prefixes, etc... You can find some examples in '''config_files/ssbgp/'''.
+You can tweak some parameters like how many prefixes you want to add/remove on each iteration, how fast, from which file you want to read the prefixes, etc. You can find some examples in `config_files/ssbgp/`.
 
 ### exabgp
 
-The tool leverages on exabgp, so the first thing you have to do is configure it to establish the peering sessions with your device. You have to make sure that you call the process that will start advertising and removing prefixes. You can find an example on how to configure exabgp and call the process in '''config_files/exabgp/exabgp.conf'''.
+The tool leverages on exabgp, so the first thing you have to do is configure it to establish the peering sessions with your device. You have to make sure that you call the process that will start advertising and removing prefixes. You can find some examples on how to configure exabgp and call the process in `config_files/exabgp/`.
